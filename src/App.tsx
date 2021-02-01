@@ -4,7 +4,7 @@ import Home from './pages/Home';
 function App () {
   return (
     <div className="App">
-      <Home openBalance={1000} />
+      <Home openBalance='0' />
     </div>
   );
 }

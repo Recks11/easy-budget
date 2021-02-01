@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import Button from '../components/Button';
 import './home.scss'
 import settings from '../icons/settings.svg'
+import details from '../icons/list.svg'
+import IconButton from '../components/IconButton';
 
 const Home = ({ openBalance }) => {
   const [balance, setBalance] = useState()
   return (
     <div className='home'>
-      <button className='settings clean circle secondary'>
-        <img src={settings} alt='S' />
-      </button>
+      <IconButton
+        className='settings clean secondary'
+        iconClass='settings-icon'
+        alt='settings'
+        icon={settings}
+      />
 
       <main className='budget-wrapper'>
         <p className='header'>Weekly Budget</p>
@@ -20,9 +25,11 @@ const Home = ({ openBalance }) => {
                 onClick={ () => setBalance('1035.00') }>
           +
         </Button>
-        <Button className='circle primary'>
-          D
-        </Button>
+        <IconButton
+          className='primary'
+          iconClass='details-icon'
+          icon={details}
+        />
         <Button className='circle secondary'>
           -
         </Button>
