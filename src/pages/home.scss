@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-around;
 
-    .details-icon {
+    .action-icon {
       width: 1.8rem;
     }
   }
@@ -50,8 +50,4 @@
   position: absolute;
   right: 1em;
   top: 1em;
-
-  &-icon {
-    width: 2rem;
-  }
 }
