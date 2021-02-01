@@ -1,0 +1,8 @@
+// helper mixin to get font sizes
+@function font-size($platform, $size: sm) {
+  @if(type_of(map_get($sizes, $platform)) == map) {
+    @return map_get(map_get($sizes, $platform), $size)
+  } @else {
+    @return map_get($platform, $size)
+  }
+}

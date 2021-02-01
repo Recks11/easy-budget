@@ -1,0 +1,50 @@
+@import "../styles/helpers/mixins/viewport";
+
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  --action-height: 50px;
+
+  .actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: var(--action-height);
+    display: flex;
+    justify-content: space-around;
+
+    @include iphone-x() {
+      --action-height: 70px;
+    }
+  }
+
+  .budget {
+    &-wrapper {
+      height: calc(100vh - var(--action-height) - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .balance {
+        margin: 0;
+        font-size: 5rem;
+        transform: translateY(-50%);
+      }
+      .header {
+        margin: 0;
+        font-size: 2rem;
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
+
+.settings {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}

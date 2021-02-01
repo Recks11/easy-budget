@@ -1,0 +1,3 @@
+@function get-z-index($component) {
+  @return map_get($z-index, $component)
+}

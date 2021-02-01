@@ -1,0 +1,104 @@
+$button-shadow: map_get(map_get($shadow-colors, button), normal);
+$button-hover-shadow: map_get(map_get($shadow-colors, button), hover);
+
+button,
+.button {
+  outline: none;
+  cursor: pointer;
+  color: color(bluewood);
+  margin: 5px;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1em;
+  box-shadow: $button-shadow;
+  border-radius: 2px;
+  mix-blend-mode: normal;
+  border: none;
+  height: 30px;
+  text-transform: uppercase;
+  transition: all 50ms ease-in;
+  transition-property: background-color, box-shadow;
+  transition-duration: 150ms;
+
+  &.circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  &:active {
+    box-shadow: none;
+    border-style: inherit;
+    transform: scale(0.95);
+  }
+
+  &.clean {
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:hover {
+    box-shadow: $button-hover-shadow;
+  }
+
+  &.primary {
+    background: color(forest-green);
+    &:hover {
+      background-color: color(java);
+    }
+  }
+
+  &.secondary {
+    background: color(white);
+    &:hover {
+      background-color: rgba(color(java), 0.5);
+    }
+  }
+
+  &.danger {
+    background: color(danger);
+    color: color(primary);
+    &:hover {
+      background-color: rgba(color(java), 0.5);
+    }
+  }
+
+}
+
+.icon-button {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  align-items: center;
+  .icon {
+    fill: color(bluewood);
+    img, svg {
+      height: 1.5em;
+      padding: 5px 10px 1px 10px;
+    }
+  }
+  .text {
+    font-size: inherit;
+    width: 60%;
+  }
+}
+
+.button-inline {
+  border: none;
+}
+
+
+.button-link {
+  background: transparent;
+  cursor: none;
+}
+
+.button-disabled {
+  background: rgba(69, 90, 100, 0.28);
+  box-shadow: none;
+  text-decoration: line-through;
+  &:active {
+    animation: shake 200ms linear infinite;
+  }
+}
